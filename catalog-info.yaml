@@ -1,6 +1,6 @@
 # Backstage descriptors for bwvgrassia/server (fork of bitwarden/server).
 # Place at the repo root as `catalog-info.yaml`.
-# Owner is the POC's example `guests` group; swap for real teams later.
+# Owner is the POC group `bitwarden-poc` (defined in the POC examples/org.yaml).
 apiVersion: backstage.io/v1alpha1
 kind: System
 metadata:
@@ -8,7 +8,7 @@ metadata:
   title: Bitwarden Password Manager
   description: Bitwarden's server services and client applications
 spec:
-  owner: group:default/guests
+  owner: group:default/bitwarden-poc
 ---
 apiVersion: backstage.io/v1alpha1
 kind: Component
@@ -23,7 +23,7 @@ metadata:
 spec:
   type: service
   lifecycle: production
-  owner: group:default/guests
+  owner: group:default/bitwarden-poc
   system: bitwarden-password-manager
 ---
 apiVersion: backstage.io/v1alpha1
@@ -39,7 +39,7 @@ metadata:
 spec:
   type: service
   lifecycle: production
-  owner: group:default/guests
+  owner: group:default/bitwarden-poc
   system: bitwarden-password-manager
 ---
 apiVersion: backstage.io/v1alpha1
@@ -55,7 +55,7 @@ metadata:
 spec:
   type: service
   lifecycle: production
-  owner: group:default/guests
+  owner: group:default/bitwarden-poc
   system: bitwarden-password-manager
 ---
 apiVersion: backstage.io/v1alpha1
@@ -71,7 +71,7 @@ metadata:
 spec:
   type: service
   lifecycle: production
-  owner: group:default/guests
+  owner: group:default/bitwarden-poc
   system: bitwarden-password-manager
 ---
 apiVersion: backstage.io/v1alpha1
@@ -87,7 +87,7 @@ metadata:
 spec:
   type: service
   lifecycle: production
-  owner: group:default/guests
+  owner: group:default/bitwarden-poc
   system: bitwarden-password-manager
 ---
 apiVersion: backstage.io/v1alpha1
@@ -103,7 +103,7 @@ metadata:
 spec:
   type: service
   lifecycle: production
-  owner: group:default/guests
+  owner: group:default/bitwarden-poc
   system: bitwarden-password-manager
 ---
 apiVersion: backstage.io/v1alpha1
@@ -119,7 +119,7 @@ metadata:
 spec:
   type: service
   lifecycle: production
-  owner: group:default/guests
+  owner: group:default/bitwarden-poc
   system: bitwarden-password-manager
 ---
 apiVersion: backstage.io/v1alpha1
@@ -135,7 +135,7 @@ metadata:
 spec:
   type: service
   lifecycle: production
-  owner: group:default/guests
+  owner: group:default/bitwarden-poc
   system: bitwarden-password-manager
 ---
 apiVersion: backstage.io/v1alpha1
@@ -151,7 +151,7 @@ metadata:
 spec:
   type: service
   lifecycle: production
-  owner: group:default/guests
+  owner: group:default/bitwarden-poc
   system: bitwarden-password-manager
 ---
 apiVersion: backstage.io/v1alpha1
@@ -167,5 +167,5 @@ metadata:
 spec:
   type: service
   lifecycle: production
-  owner: group:default/guests
+  owner: group:default/bitwarden-poc
   system: bitwarden-password-manager
