@@ -1,0 +1,171 @@
+# Backstage descriptors for bwvgrassia/server (fork of bitwarden/server).
+# Place at the repo root as `catalog-info.yaml`.
+# Owner is the POC's example `guests` group; swap for real teams later.
+apiVersion: backstage.io/v1alpha1
+kind: System
+metadata:
+  name: bitwarden-password-manager
+  title: Bitwarden Password Manager
+  description: Bitwarden's server services and client applications
+spec:
+  owner: group:default/guests
+---
+apiVersion: backstage.io/v1alpha1
+kind: Component
+metadata:
+  name: bitwarden-api
+  title: Bitwarden API
+  description: Core REST API for vaults, organizations, and account data
+  annotations:
+    github.com/project-slug: bwvgrassia/server
+    backstage.io/source-location: url:https://github.com/bwvgrassia/server/tree/main/src/Api/
+  tags: [dotnet, server]
+spec:
+  type: service
+  lifecycle: production
+  owner: group:default/guests
+  system: bitwarden-password-manager
+---
+apiVersion: backstage.io/v1alpha1
+kind: Component
+metadata:
+  name: bitwarden-identity
+  title: Bitwarden Identity
+  description: Authentication and token issuance (OAuth2 / OpenID Connect)
+  annotations:
+    github.com/project-slug: bwvgrassia/server
+    backstage.io/source-location: url:https://github.com/bwvgrassia/server/tree/main/src/Identity/
+  tags: [dotnet, server]
+spec:
+  type: service
+  lifecycle: production
+  owner: group:default/guests
+  system: bitwarden-password-manager
+---
+apiVersion: backstage.io/v1alpha1
+kind: Component
+metadata:
+  name: bitwarden-admin
+  title: Bitwarden Admin Portal
+  description: Internal administration portal
+  annotations:
+    github.com/project-slug: bwvgrassia/server
+    backstage.io/source-location: url:https://github.com/bwvgrassia/server/tree/main/src/Admin/
+  tags: [dotnet, server]
+spec:
+  type: service
+  lifecycle: production
+  owner: group:default/guests
+  system: bitwarden-password-manager
+---
+apiVersion: backstage.io/v1alpha1
+kind: Component
+metadata:
+  name: bitwarden-billing
+  title: Bitwarden Billing
+  description: Billing and payment provider integration service
+  annotations:
+    github.com/project-slug: bwvgrassia/server
+    backstage.io/source-location: url:https://github.com/bwvgrassia/server/tree/main/src/Billing/
+  tags: [dotnet, server]
+spec:
+  type: service
+  lifecycle: production
+  owner: group:default/guests
+  system: bitwarden-password-manager
+---
+apiVersion: backstage.io/v1alpha1
+kind: Component
+metadata:
+  name: bitwarden-events
+  title: Bitwarden Events
+  description: Receives client event logs
+  annotations:
+    github.com/project-slug: bwvgrassia/server
+    backstage.io/source-location: url:https://github.com/bwvgrassia/server/tree/main/src/Events/
+  tags: [dotnet, server]
+spec:
+  type: service
+  lifecycle: production
+  owner: group:default/guests
+  system: bitwarden-password-manager
+---
+apiVersion: backstage.io/v1alpha1
+kind: Component
+metadata:
+  name: bitwarden-events-processor
+  title: Bitwarden Events Processor
+  description: Background processing of queued event logs
+  annotations:
+    github.com/project-slug: bwvgrassia/server
+    backstage.io/source-location: url:https://github.com/bwvgrassia/server/tree/main/src/EventsProcessor/
+  tags: [dotnet, server]
+spec:
+  type: service
+  lifecycle: production
+  owner: group:default/guests
+  system: bitwarden-password-manager
+---
+apiVersion: backstage.io/v1alpha1
+kind: Component
+metadata:
+  name: bitwarden-icons
+  title: Bitwarden Icons
+  description: Website icon fetching and caching service
+  annotations:
+    github.com/project-slug: bwvgrassia/server
+    backstage.io/source-location: url:https://github.com/bwvgrassia/server/tree/main/src/Icons/
+  tags: [dotnet, server]
+spec:
+  type: service
+  lifecycle: production
+  owner: group:default/guests
+  system: bitwarden-password-manager
+---
+apiVersion: backstage.io/v1alpha1
+kind: Component
+metadata:
+  name: bitwarden-notifications
+  title: Bitwarden Notifications
+  description: Real-time push notifications to clients (SignalR)
+  annotations:
+    github.com/project-slug: bwvgrassia/server
+    backstage.io/source-location: url:https://github.com/bwvgrassia/server/tree/main/src/Notifications/
+  tags: [dotnet, server]
+spec:
+  type: service
+  lifecycle: production
+  owner: group:default/guests
+  system: bitwarden-password-manager
+---
+apiVersion: backstage.io/v1alpha1
+kind: Component
+metadata:
+  name: bitwarden-sso
+  title: Bitwarden SSO
+  description: Enterprise single sign-on (SAML / OIDC) service
+  annotations:
+    github.com/project-slug: bwvgrassia/server
+    backstage.io/source-location: url:https://github.com/bwvgrassia/server/tree/main/bitwarden_license/src/Sso/
+  tags: [dotnet, server, commercial]
+spec:
+  type: service
+  lifecycle: production
+  owner: group:default/guests
+  system: bitwarden-password-manager
+---
+apiVersion: backstage.io/v1alpha1
+kind: Component
+metadata:
+  name: bitwarden-scim
+  title: Bitwarden SCIM
+  description: SCIM user and group provisioning service
+  annotations:
+    github.com/project-slug: bwvgrassia/server
+    backstage.io/source-location: url:https://github.com/bwvgrassia/server/tree/main/bitwarden_license/src/Scim/
+  tags: [dotnet, server, commercial]
+spec:
+  type: service
+  lifecycle: production
+  owner: group:default/guests
+  system: bitwarden-password-manager
